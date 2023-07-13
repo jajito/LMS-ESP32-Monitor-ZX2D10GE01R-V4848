@@ -1,0 +1,16 @@
+{
+  "codename": "opensansreg22",
+  "ttf_path": "\\assets\\OpenSans-Regular.ttf",
+  "bin_path": "\\assets\\ui_font_opensansreg22.bin",
+  "c_path": "\\assets\\ui_font_opensansreg22.c",
+  "cfg_path": "\\assets\\ui_font_opensansreg22.fcfg",
+  "size": 22,
+  "bpp": 4,
+  "letters": 3,
+  "ranges": [
+    "0x20-0xff"
+  ],
+  "symbols": "",
+  "customparams": "--no-compress --no-prefilter",
+  "uploaded": false
+}
