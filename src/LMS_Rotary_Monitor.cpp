@@ -497,7 +497,8 @@ void Check_Regular() {
       return;
     }
     JsonObject result = doc["result"];
-    int result_remoteMeta_id = result["remoteMeta"]["id"]; // 683
+    //int result_remoteMeta_id = result["remoteMeta"]["id"]; // 683
+    int result_remoteMeta_id = doc["result"]["playlist_loop"][0]["id"];//["playlist index"]; // hay que encontrar el campo del json con la id del tema
     const char* result_mode = result["mode"]; // "play"
     if (strcmp(result_mode ,"play")== 0){
       is_playing = true;
@@ -605,6 +606,18 @@ void Check_Song_Info( int songId) {
     const char* album = result_songinfo_loop[10]["album"]; // sometimes LMS changes the number...
     String separador = " - ";
     String c  = artist + separador + title + separador + album ;
+    if (title == NULL){
+      Serial.print ("title error");
+      album = "Título desconocido";
+    }
+    if (artist == NULL){
+      Serial.print ("artist error");
+      artist = "Artista desconocido";
+    }
+    if (album == NULL){
+      Serial.print ("album error");
+      album = "Album desconocido";
+    }
     //Serial.printf("json result : %c\n", c);
     //Serial.println (c);
     // to eliminate accents if font doesn' have accents
